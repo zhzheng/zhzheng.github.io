@@ -5,16 +5,16 @@
   
   <title>用dropbox给blog做个备份 | zehuazheng&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="考虑到“人无远虑必有近忧”（wo you qiang po zheng），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。原理是利用Dropbox同步source文件夹，全局和theme的_config.yml也可以同步一次。注册Dropbo">
+  <meta name="description" content="考虑到“人无远虑必有近忧”（wo you qiang po zheng），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。原理是利用Dropbox同步source文件夹，在konding中将source文件夹compress-as.zip-同">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用dropbox给blog做个备份">
 <meta property="og:url" content="http://yoursite.com/2015/10/14/dropbox-backup/index.html">
 <meta property="og:site_name" content="zehuazheng's blog">
-<meta property="og:description" content="考虑到“人无远虑必有近忧”（wo you qiang po zheng），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。原理是利用Dropbox同步source文件夹，全局和theme的_config.yml也可以同步一次。注册Dropbo">
-<meta property="og:updated_time" content="2015-10-14T07:08:57.000Z">
+<meta property="og:description" content="考虑到“人无远虑必有近忧”（wo you qiang po zheng），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。原理是利用Dropbox同步source文件夹，在konding中将source文件夹compress-as.zip-同">
+<meta property="og:updated_time" content="2015-10-14T07:14:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用dropbox给blog做个备份">
-<meta name="twitter:description" content="考虑到“人无远虑必有近忧”（wo you qiang po zheng），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。原理是利用Dropbox同步source文件夹，全局和theme的_config.yml也可以同步一次。注册Dropbo">
+<meta name="twitter:description" content="考虑到“人无远虑必有近忧”（wo you qiang po zheng），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。原理是利用Dropbox同步source文件夹，在konding中将source文件夹compress-as.zip-同">
   
     <link rel="alternative" href="/atom.xml" title="zehuazheng&#39;s blog" type="application/atom+xml">
   
@@ -182,8 +182,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>考虑到“人无远虑必有近忧”（<strong>wo you qiang po zheng</strong>），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。<br>原理是利用Dropbox同步source文件夹，全局和theme的_config.yml也可以同步一次。<br><strong>注册</strong><a href="https://www.dropbox.com" target="_blank" rel="external">Dropbox</a>账户<br>此站目前被墙，自行科学上网<br>建议注册新账户，原因是经以下步骤默认会将Dropbox所有文件拖入vm，此问题可通过selective sync feature设置不同步某目录<br><strong>安装dropbox</strong><br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kpm <span class="keyword">install</span> dropbox</span><br></pre></td></tr></table></figure></p>
+        <p>考虑到“人无远虑必有近忧”（<strong>wo you qiang po zheng</strong>），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。<br>原理是利用Dropbox同步source文件夹，在konding中将source文件夹compress-as.zip-同步。全局和theme的_config.yml也可以同步一次。<br><strong>注册</strong><a href="https://www.dropbox.com" target="_blank" rel="external">Dropbox</a>账户<br>此站目前被墙，自行科学上网<br>建议注册新账户，原因是经以下步骤默认会将Dropbox所有文件拖入vm，此问题可通过selective sync feature设置不同步某目录<br><strong>安装dropbox</strong><br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kpm <span class="keyword">install</span> dropbox</span><br></pre></td></tr></table></figure></p>
 <p><strong>关联账户</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dropboxd</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>此时terminal提示,浏览器打开之关联Dropbox<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please visit http<span class="variable">s:</span>//www.dropbox.<span class="keyword">com</span>/cli_link_nonce?nonce=A_VERY_LONG_NUMBER <span class="keyword">to</span> link this device.</span><br></pre></td></tr></table></figure></p>
 <p>此时根目录出现Dropbox文件夹，在此文件夹拖放文件可以自动同步。</p>
 <hr>
