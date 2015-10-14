@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/10/14/20151014-dropbox-backup/index.html">
 <meta property="og:site_name" content="zehuazheng's blog">
 <meta property="og:description" content="考虑到“人无远虑必有近忧”（wo you qiang po zheng），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。原理是利用Dropbox同步source文件夹，在konding中将source文件夹compress-as.zip-同">
-<meta property="og:updated_time" content="2015-10-14T13:35:51.000Z">
+<meta property="og:updated_time" content="2015-10-14T13:52:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用dropbox给blog做个备份">
 <meta name="twitter:description" content="考虑到“人无远虑必有近忧”（wo you qiang po zheng），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。原理是利用Dropbox同步source文件夹，在konding中将source文件夹compress-as.zip-同">
@@ -188,7 +188,10 @@
 <p>此时terminal提示,浏览器打开之关联Dropbox<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please visit http<span class="variable">s:</span>//www.dropbox.<span class="keyword">com</span>/cli_link_nonce?nonce=A_VERY_LONG_NUMBER <span class="keyword">to</span> link this device.</span><br></pre></td></tr></table></figure></p>
 <p>此时根目录出现Dropbox文件夹，在此文件夹拖放文件可以自动同步。</p>
 <p><strong>vm重启之后同步失效</strong><br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~<span class="regexp">/.dropbox-dist/dropboxd</span> &amp;  <span class="regexp">//</span>启用dropbox同步服务</span><br></pre></td></tr></table></figure></p>
-<h2 id="linux_中cd_~_回到用户主目录，若为root用户回到/root/，若为其他用户回到/home/">linux 中cd ~ 回到用户主目录，若为root用户回到/root/，若为其他用户回到/home/</h2><p><strong>附:Dropbox卸载</strong><br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">kpm</span> uninstall dropbox</span><br></pre></td></tr></table></figure></p>
+<p>或者直接（作用和上一条相同）<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dropboxd</span><br></pre></td></tr></table></figure></p>
+<p>linux 中cd ~ 回到用户主目录，若为root用户回到/root/，若为其他用户回到/home/</p>
+<hr>
+<p><strong>附:Dropbox卸载</strong><br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">kpm</span> uninstall dropbox</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
