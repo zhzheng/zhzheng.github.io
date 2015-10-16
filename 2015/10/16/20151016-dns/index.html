@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="hostinger申请了.xyz域名,但好在是免费。一年之后再决定继续用低端顶级域名或者出血上.comdns解析过程走了很多弯路：方法一：在hostinger中设置a记录可以解析到主页，但内容404。方法二：CNAME解析到github pages无法访问。最后不得已祭出dnspod。
 
-实现过程：1、repositories中建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz ，其">
+实现过程：1、hexo安装目录source下建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz">
 <meta property="og:type" content="article">
 <meta property="og:title" content="绑定域名和dns解析">
 <meta property="og:url" content="http://yoursite.com/2015/10/16/20151016-dns/index.html">
 <meta property="og:site_name" content="zehuazheng's blog">
 <meta property="og:description" content="hostinger申请了.xyz域名,但好在是免费。一年之后再决定继续用低端顶级域名或者出血上.comdns解析过程走了很多弯路：方法一：在hostinger中设置a记录可以解析到主页，但内容404。方法二：CNAME解析到github pages无法访问。最后不得已祭出dnspod。
 
-实现过程：1、repositories中建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz ，其">
-<meta property="og:updated_time" content="2015-10-16T03:05:52.000Z">
+实现过程：1、hexo安装目录source下建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz">
+<meta property="og:updated_time" content="2015-10-16T03:33:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="绑定域名和dns解析">
 <meta name="twitter:description" content="hostinger申请了.xyz域名,但好在是免费。一年之后再决定继续用低端顶级域名或者出血上.comdns解析过程走了很多弯路：方法一：在hostinger中设置a记录可以解析到主页，但内容404。方法二：CNAME解析到github pages无法访问。最后不得已祭出dnspod。
 
-实现过程：1、repositories中建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz ，其">
+实现过程：1、hexo安装目录source下建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz">
   
     <link rel="alternative" href="/atom.xml" title="zehuazheng&#39;s blog" type="application/atom+xml">
   
@@ -190,7 +190,15 @@
       
         <p><a href="http://www.hostinger.com.hk/" target="_blank" rel="external">hostinger</a>申请了.xyz域名,但好在是免费。<br>一年之后再决定继续用低端顶级域名或者出血上.com<br>dns解析过程走了很多弯路：<br>方法一：在hostinger中设置a记录可以解析到主页，但内容404。<br>方法二：CNAME解析到github pages无法访问。<br>最后不得已祭出<a href="https://www.dnspod.cn" target="_blank" rel="external">dnspod</a>。</p>
 <hr>
-<p><strong>实现过程：</strong><br>1、repositories中建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz ，其实现原理为当访问者通过zhzheng.xyz跳转到github pages公用地址192.30.252.153时，github通过此文件定位。<br>2、hostinger域名设置：A记录清空，CNAME默认-主机www、指向zhzheng.xyz、TTL默认。<br>NS设置:<br>| 主机 | TXT值   |  TTL  |<br>| :—:   | :—–:  | :—-:  |<br>|@|f1g1ns1.dnspod.net|默认|<br>|@|f1g1ns2.dnspod.net|默认|<br>3、dnspod添加域名设置如下<br>| 主机记录 | 记录类型   |  记录值  |<br>| :—:   | :—–:  | :—-:  |<br>|@       |A       |192.30.252.153     |<br>|@       |A       |192.30.252.154     |<br>|@       |NS      |f1g1ns1.dnspod.net.|<br>|@       |NS      |f1g1ns2.dnspod.net.|<br>|www     |CNAME   |zhzheng.github.io. |<br>等待几小时解析生效，ping zhzheng.xyz返回ip为192.30.252.153，即github pages公用地址。</p>
+<p><strong>实现过程：</strong><br>1、hexo安装目录source下建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz 。编译之后repositories中建立CNAME文件，其实现原理为当访问者通过zhzheng.xyz跳转到github pages公用地址192.30.252.153时，github通过此文件定位。<br>2、hostinger域名设置：A记录清空，CNAME默认-主机www、指向zhzheng.xyz、TTL默认。<br>NS设置:</p>
+<hr>
+<p>| 主机 |     TXT值        |  TTL  |<br>|@     |f1g1ns1.dnspod.net| 默认  |<br>|@     |f1g1ns2.dnspod.net| 默认  |</p>
+<p>3、dnspod添加域名设置如下</p>
+<hr>
+<p>| 主机记录 | 记录类型   |  记录值           |<br>|@         |A           |192.30.252.153     |<br>|@         |A           |192.30.252.154     |<br>|@         |NS          |f1g1ns1.dnspod.net.|<br>|@         |NS          |f1g1ns2.dnspod.net.|<br>|www       |CNAME       |zhzheng.github.io. |</p>
+<p>等待几小时解析生效，ping zhzheng.xyz返回ip为192.30.252.153，即github pages公用地址。</p>
+<hr>
+<p>这个主题貌似不支持作业部落的绘制表格语法</p>
 
       
     </div>
