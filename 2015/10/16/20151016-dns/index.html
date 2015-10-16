@@ -3,18 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>用dropbox给blog做个备份 | zehuazheng&#39;s blog</title>
+  <title>绑定域名和dns解析 | zehuazheng&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="考虑到“人无远虑必有近忧”（wo you qiang po zheng），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。原理是利用Dropbox同步source文件夹，在konding中将source文件夹compress-as.zip-同">
+  <meta name="description" content="hostinger申请了.xyz域名,但好在是免费。一年之后再决定继续用低端顶级域名或者出血上.comdns解析过程走了很多弯路：方法一：在hostinger中设置a记录可以解析到主页，但内容404。方法二：CNAME解析到github pages无法访问。最后不得已祭出dnspod。
+
+实现过程：1、repositories中建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz ，其">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用dropbox给blog做个备份">
-<meta property="og:url" content="http://yoursite.com/2015/10/14/20151014-dropbox-backup/index.html">
+<meta property="og:title" content="绑定域名和dns解析">
+<meta property="og:url" content="http://yoursite.com/2015/10/16/20151016-dns/index.html">
 <meta property="og:site_name" content="zehuazheng's blog">
-<meta property="og:description" content="考虑到“人无远虑必有近忧”（wo you qiang po zheng），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。原理是利用Dropbox同步source文件夹，在konding中将source文件夹compress-as.zip-同">
-<meta property="og:updated_time" content="2015-10-14T13:52:14.000Z">
+<meta property="og:description" content="hostinger申请了.xyz域名,但好在是免费。一年之后再决定继续用低端顶级域名或者出血上.comdns解析过程走了很多弯路：方法一：在hostinger中设置a记录可以解析到主页，但内容404。方法二：CNAME解析到github pages无法访问。最后不得已祭出dnspod。
+
+实现过程：1、repositories中建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz ，其">
+<meta property="og:updated_time" content="2015-10-16T03:05:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用dropbox给blog做个备份">
-<meta name="twitter:description" content="考虑到“人无远虑必有近忧”（wo you qiang po zheng），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。原理是利用Dropbox同步source文件夹，在konding中将source文件夹compress-as.zip-同">
+<meta name="twitter:title" content="绑定域名和dns解析">
+<meta name="twitter:description" content="hostinger申请了.xyz域名,但好在是免费。一年之后再决定继续用低端顶级域名或者出血上.comdns解析过程走了很多弯路：方法一：在hostinger中设置a记录可以解析到主页，但内容404。方法二：CNAME解析到github pages无法访问。最后不得已祭出dnspod。
+
+实现过程：1、repositories中建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz ，其">
   
     <link rel="alternative" href="/atom.xml" title="zehuazheng&#39;s blog" type="application/atom+xml">
   
@@ -145,11 +151,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-20151014-dropbox-backup" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-20151016-dns" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/14/20151014-dropbox-backup/" class="article-date">
-  	<time datetime="2015-10-14T06:43:26.000Z" itemprop="datePublished">2015-10-14</time>
+      <a href="/2015/10/16/20151016-dns/" class="article-date">
+  	<time datetime="2015-10-16T02:26:40.000Z" itemprop="datePublished">2015-10-16</time>
 </a>
     </div>
   
@@ -162,7 +168,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      用dropbox给blog做个备份
+      绑定域名和dns解析
     </h1>
   
 
@@ -171,7 +177,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dropbox/">dropbox</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dns/">dns</a></li></ul>
 	</div>
 
         
@@ -182,16 +188,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>考虑到“人无远虑必有近忧”（<strong>wo you qiang po zheng</strong>），所以还是决定要把blog备份一下。鉴于Koding file transfer机制很不友好（易上传难下载），尝试之后决定采用Dropbox的同步功能，这样手残弄废vm之后blog也不至于产生灾难性数据丢失。<br>原理是利用Dropbox同步source文件夹，在konding中将source文件夹compress-as.zip-同步。全局和theme的_config.yml也可以同步一次。<br><strong>注册</strong><a href="https://www.dropbox.com" target="_blank" rel="external">Dropbox</a>账户<br>此站目前被墙，自行科学上网<br>建议注册新账户，原因是经以下步骤默认会将Dropbox所有文件拖入vm，此问题可通过selective sync feature设置不同步某目录<br><strong>安装dropbox</strong><br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kpm <span class="keyword">install</span> dropbox</span><br></pre></td></tr></table></figure></p>
-<p><strong>关联账户</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dropboxd</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>此时terminal提示,浏览器打开之关联Dropbox<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please visit http<span class="variable">s:</span>//www.dropbox.<span class="keyword">com</span>/cli_link_nonce?nonce=A_VERY_LONG_NUMBER <span class="keyword">to</span> link this device.</span><br></pre></td></tr></table></figure></p>
-<p>此时根目录出现Dropbox文件夹，在此文件夹拖放文件可以自动同步。</p>
-<p><strong>vm重启之后同步失效</strong><br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~<span class="regexp">/.dropbox-dist/dropboxd</span> &amp;  <span class="regexp">//</span>启用dropbox同步服务</span><br></pre></td></tr></table></figure></p>
-<p>或者直接（作用和上一条相同）<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dropboxd</span><br></pre></td></tr></table></figure></p>
-<p>linux 中cd ~ 回到用户主目录，若为root用户回到/root/，若为其他用户回到/home/</p>
+        <p><a href="http://www.hostinger.com.hk/" target="_blank" rel="external">hostinger</a>申请了.xyz域名,但好在是免费。<br>一年之后再决定继续用低端顶级域名或者出血上.com<br>dns解析过程走了很多弯路：<br>方法一：在hostinger中设置a记录可以解析到主页，但内容404。<br>方法二：CNAME解析到github pages无法访问。<br>最后不得已祭出<a href="https://www.dnspod.cn" target="_blank" rel="external">dnspod</a>。</p>
 <hr>
-<p><strong>附:Dropbox卸载</strong><br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">kpm</span> uninstall dropbox</span><br></pre></td></tr></table></figure></p>
+<p><strong>实现过程：</strong><br>1、repositories中建立CNAME文件，没有扩展名，内容为域名zhzheng.xyz ，其实现原理为当访问者通过zhzheng.xyz跳转到github pages公用地址192.30.252.153时，github通过此文件定位。<br>2、hostinger域名设置：A记录清空，CNAME默认-主机www、指向zhzheng.xyz、TTL默认。<br>NS设置:<br>| 主机 | TXT值   |  TTL  |<br>| :—:   | :—–:  | :—-:  |<br>|@|f1g1ns1.dnspod.net|默认|<br>|@|f1g1ns2.dnspod.net|默认|<br>3、dnspod添加域名设置如下<br>| 主机记录 | 记录类型   |  记录值  |<br>| :—:   | :—–:  | :—-:  |<br>|@       |A       |192.30.252.153     |<br>|@       |A       |192.30.252.154     |<br>|@       |NS      |f1g1ns1.dnspod.net.|<br>|@       |NS      |f1g1ns2.dnspod.net.|<br>|www     |CNAME   |zhzheng.github.io. |<br>等待几小时解析生效，ping zhzheng.xyz返回ip为192.30.252.153，即github pages公用地址。</p>
 
       
     </div>
@@ -201,18 +200,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/10/16/20151016-dns/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          绑定域名和dns解析
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/10/13/20151013-Test/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">test</div>
+    <a href="/2015/10/14/20151014-dropbox-backup/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用dropbox给blog做个备份</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -241,7 +231,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="20151014-dropbox-backup" data-title="用dropbox给blog做个备份" data-url="http://yoursite.com/2015/10/14/20151014-dropbox-backup/"></div>
+	<div class="ds-thread" data-thread-key="20151016-dns" data-title="绑定域名和dns解析" data-url="http://yoursite.com/2015/10/16/20151016-dns/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
