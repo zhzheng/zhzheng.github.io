@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>备忘：ubuntu安装JAVA、tomcat、hadoop、vi常用命令 | zehuazheng&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="新安装ubuntu的root密码随机，修改1sudo passwd root
+更新源1apt-get update">
+<meta property="og:type" content="article">
+<meta property="og:title" content="备忘：ubuntu安装JAVA、tomcat、hadoop、vi常用命令">
+<meta property="og:url" content="http://yoursite.com/2015/12/17/Ubuntu/index.html">
+<meta property="og:site_name" content="zehuazheng's blog">
+<meta property="og:description" content="新安装ubuntu的root密码随机，修改1sudo passwd root
+更新源1apt-get update">
+<meta property="og:updated_time" content="2015-12-17T14:09:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="备忘：ubuntu安装JAVA、tomcat、hadoop、vi常用命令">
+<meta name="twitter:description" content="新安装ubuntu的root密码随机，修改1sudo passwd root
+更新源1apt-get update">
+  
+    <link rel="alternative" href="/atom.xml" title="zehuazheng&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xnfn1.com1.z0.glb.clouddn.com/portrait.PNG" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">zehua zheng</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/zhzheng/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/zehuazheng" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/dns/" style="font-size: 10px;">dns</a> <a href="/tags/dropbox/" style="font-size: 10px;">dropbox</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/云端-hexo-koding/" style="font-size: 10px;">云端 hexo koding</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">zehua zheng</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xnfn1.com1.z0.glb.clouddn.com/portrait.PNG" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">zehua zheng</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/zhzheng/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/zehuazheng" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/17/Ubuntu/" class="article-date">
+  	<time datetime="2015-12-17T12:58:40.000Z" itemprop="datePublished">2015-12-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      备忘：ubuntu安装JAVA、tomcat、hadoop、vi常用命令
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>新安装ubuntu的root密码随机，修改<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> passwd root</span><br></pre></td></tr></table></figure></p>
+<p>更新源<br><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>安装SSH用于xshell连接<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span></span><br><span class="line">ps -<span class="keyword">e</span> | grep ssh 检测，出现sshd成功</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>JAVA</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="operator"><span class="keyword">install</span> openjdk-<span class="number">7</span>-jdk</span><br><span class="line"><span class="keyword">java</span> -<span class="keyword">version</span> 检测</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>tomcat</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">sudo</span> <span class="tag">apt-get</span> <span class="tag">install</span> <span class="tag">lrzsz</span> 安装<span class="tag">lrzsz</span>用于向服务器传文件</span><br><span class="line"><span class="tag">rz</span> 选择<span class="tag">apache-tomcat-7</span><span class="class">.0</span><span class="class">.67</span><span class="class">.tar</span><span class="class">.gz</span></span><br><span class="line">注：<span class="tag">rz</span> 上传到服务器  <span class="tag">sz</span>下载  （<span class="tag">rs</span>相对于服务器的<span class="tag">send</span>、<span class="tag">receive</span>）</span><br></pre></td></tr></table></figure></p>
+<p>假设apache-tomcat-7.0.67.tar.gz上传到“下载”目录<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd 下载</span><br><span class="line">tar -zxvf apache-tomcat-<span class="number">7.0</span><span class="number">.67</span>.tar.gz  解压</span><br><span class="line">mv apache-tomcat-<span class="number">7.0</span><span class="number">.67</span> tomcat改名</span><br><span class="line">sudo mv tomcat /usr/local</span><br><span class="line">sudo chmod <span class="number">777</span> /usr/local/tomcat <span class="number">4</span>读<span class="number">2</span>写<span class="number">1</span>执行 <span class="number">4</span>+<span class="number">2</span>+<span class="number">1</span>=<span class="number">7</span> 登录用户/所在组/其他人</span><br><span class="line">sudo apt-get install vim  若无，安装vi</span><br><span class="line">sudo vi /usr/local/tomcat/bin/startup.sh 修改环境变量</span><br></pre></td></tr></table></figure></p>
+<p>在第25行esac之下插入如下环境变量<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#TOMCATstartup环境变量</span></span><br><span class="line"><span class="constant">JAVA_HOME</span>=<span class="regexp">/usr/lib</span><span class="regexp">/jvm/java</span>-<span class="number">7</span>-openjdk-amd64</span><br><span class="line"><span class="constant">JRE_HOME</span>=<span class="variable">$JAVA_HOME</span>/jre</span><br><span class="line"><span class="constant">PATH</span>=<span class="variable">$PATH</span><span class="symbol">:</span><span class="variable">$JAVA_HOME</span>/<span class="symbol">bin:</span><span class="variable">$JRE_HOME</span></span><br><span class="line"><span class="constant">CLASSPATH</span>=.<span class="symbol">:</span><span class="variable">$JRE_HOME</span>/<span class="class"><span class="keyword">lib</span>/<span class="title">rt</span>.<span class="title">jar</span>:$<span class="title">JAVA_HOME</span>/<span class="title">lib</span>/<span class="title">dt</span>.<span class="title">jar</span>:$<span class="title">JAVA_HOME</span>/<span class="title">lib</span>/<span class="title">tools</span>.<span class="title">jar</span></span></span><br><span class="line"><span class="constant">TOMCAT_HOME</span>=<span class="regexp">/usr/local</span><span class="regexp">/tomcat</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="regexp">/usr/</span>local<span class="regexp">/tomcat/</span>bin/startup.sh 启动tomcat</span><br><span class="line">sudo <span class="regexp">/usr/</span>local<span class="regexp">/tomcat/</span>bin/startup.sh 关闭</span><br></pre></td></tr></table></figure>
+<p><strong>附vi常用命令</strong></p>
+<pre><code><span class="keyword">H</span> J K <span class="keyword">L</span> 左 下 上 右
+<span class="keyword">G</span>光标移到尾行
+dd删除一行
+x删除一个字符
+o在当前行下插入新行
+i光标前插入
+I光标后插入
+<span class="keyword">u</span>撤销一步
+ctrl+r 在<span class="keyword">u</span>撤销一步的前提下持续撤销到初始状态，即用<span class="keyword">u</span>撤销一步在用此命令（ubuntu）
+esc退出编辑状态
+:x保存并退出，在光标状态使用，若未修改不更新修改时间
+wq保存并退出若未修改同样更新修改时间
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/10/31/20151031c-learning/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">c++ learning</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Ubuntu" data-title="备忘：ubuntu安装JAVA、tomcat、hadoop、vi常用命令" data-url="http://yoursite.com/2015/12/17/Ubuntu/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"wsnd21"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 zehua zheng
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
