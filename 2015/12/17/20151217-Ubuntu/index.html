@@ -9,11 +9,11 @@
 更新源1apt-get update">
 <meta property="og:type" content="article">
 <meta property="og:title" content="备忘：ubuntu安装JAVA、tomcat、hadoop、vi常用命令">
-<meta property="og:url" content="http://yoursite.com/2015/12/17/Ubuntu/index.html">
+<meta property="og:url" content="http://yoursite.com/2015/12/17/20151217-Ubuntu/index.html">
 <meta property="og:site_name" content="zehuazheng's blog">
 <meta property="og:description" content="新安装ubuntu的root密码随机，修改1sudo passwd root
 更新源1apt-get update">
-<meta property="og:updated_time" content="2015-12-17T14:09:47.000Z">
+<meta property="og:updated_time" content="2015-12-27T12:54:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="备忘：ubuntu安装JAVA、tomcat、hadoop、vi常用命令">
 <meta name="twitter:description" content="新安装ubuntu的root密码随机，修改1sudo passwd root
@@ -148,10 +148,10 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-20151217-Ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/17/Ubuntu/" class="article-date">
+      <a href="/2015/12/17/20151217-Ubuntu/" class="article-date">
   	<time datetime="2015-12-17T12:58:40.000Z" itemprop="datePublished">2015-12-17</time>
 </a>
     </div>
@@ -194,6 +194,11 @@
 <p>假设apache-tomcat-7.0.67.tar.gz上传到“下载”目录<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd 下载</span><br><span class="line">tar -zxvf apache-tomcat-<span class="number">7.0</span><span class="number">.67</span>.tar.gz  解压</span><br><span class="line">mv apache-tomcat-<span class="number">7.0</span><span class="number">.67</span> tomcat改名</span><br><span class="line">sudo mv tomcat /usr/local</span><br><span class="line">sudo chmod <span class="number">777</span> /usr/local/tomcat <span class="number">4</span>读<span class="number">2</span>写<span class="number">1</span>执行 <span class="number">4</span>+<span class="number">2</span>+<span class="number">1</span>=<span class="number">7</span> 登录用户/所在组/其他人</span><br><span class="line">sudo apt-get install vim  若无，安装vi</span><br><span class="line">sudo vi /usr/local/tomcat/bin/startup.sh 修改环境变量</span><br></pre></td></tr></table></figure></p>
 <p>在第25行esac之下插入如下环境变量<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#TOMCATstartup环境变量</span></span><br><span class="line"><span class="constant">JAVA_HOME</span>=<span class="regexp">/usr/lib</span><span class="regexp">/jvm/java</span>-<span class="number">7</span>-openjdk-amd64</span><br><span class="line"><span class="constant">JRE_HOME</span>=<span class="variable">$JAVA_HOME</span>/jre</span><br><span class="line"><span class="constant">PATH</span>=<span class="variable">$PATH</span><span class="symbol">:</span><span class="variable">$JAVA_HOME</span>/<span class="symbol">bin:</span><span class="variable">$JRE_HOME</span></span><br><span class="line"><span class="constant">CLASSPATH</span>=.<span class="symbol">:</span><span class="variable">$JRE_HOME</span>/<span class="class"><span class="keyword">lib</span>/<span class="title">rt</span>.<span class="title">jar</span>:$<span class="title">JAVA_HOME</span>/<span class="title">lib</span>/<span class="title">dt</span>.<span class="title">jar</span>:$<span class="title">JAVA_HOME</span>/<span class="title">lib</span>/<span class="title">tools</span>.<span class="title">jar</span></span></span><br><span class="line"><span class="constant">TOMCAT_HOME</span>=<span class="regexp">/usr/local</span><span class="regexp">/tomcat</span></span><br></pre></td></tr></table></figure></p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="regexp">/usr/</span>local<span class="regexp">/tomcat/</span>bin/startup.sh 启动tomcat</span><br><span class="line">sudo <span class="regexp">/usr/</span>local<span class="regexp">/tomcat/</span>bin/startup.sh 关闭</span><br></pre></td></tr></table></figure>
+<p><strong>SSH无密码连接（设置master可以无密码连接slave）</strong><br>master和slave共同工作<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo addgroup hadoop </span><br><span class="line">sudo adduser --ingroup hadoop hadoop  创建新账户hadoop和hadoop组</span><br><span class="line">su   切换root</span><br><span class="line">vi /etc/sudoers  </span><br><span class="line">/*在root  <span class="built_in">ALL</span>=(<span class="built_in">ALL</span>:<span class="built_in">ALL</span>)  <span class="built_in">ALL</span>下添加hadoop <span class="built_in">ALL</span>=(<span class="built_in">ALL</span>:<span class="built_in">ALL</span>)  <span class="built_in">ALL</span></span><br><span class="line">注意用:wq！强制保存退出*/</span><br><span class="line">su hadoop 切回hadoop</span><br><span class="line">cd 切回主目录</span><br><span class="line">ssh-keygen -t rsa -P <span class="string">""</span>   </span><br><span class="line">cd .ssh</span><br><span class="line">cat ~/.ssh/id_rsa.pub&gt;&gt; ~/.ssh/authorized_keys 将自己的公钥放入authorized_keys中</span><br><span class="line">此时ssh localhost测试，无需密码进入表示配置成功</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>MASTER端<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd <span class="class">.ssh</span></span><br><span class="line">sz id_rsa<span class="class">.pub</span> 下载master公钥，在本地改名为master_id_rsa.pub</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>SLAVE端<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd <span class="class">.ssh</span></span><br><span class="line">rz master_id_rsa<span class="class">.pub</span>  上传master公钥</span><br><span class="line">cat master_id_rsa<span class="class">.pub</span> &gt;&gt; authorized_keys  将master公钥写在本机授权文件之后</span><br><span class="line">此时master端 ssh slaveIpAddress ，无需密码进入表示配置成功</span><br></pre></td></tr></table></figure></p>
 <p><strong>附vi常用命令</strong></p>
 <pre><code><span class="keyword">H</span> J K <span class="keyword">L</span> 左 下 上 右
 <span class="keyword">G</span>光标移到尾行
@@ -207,6 +212,7 @@ ctrl+r 在<span class="keyword">u</span>撤销一步的前提下持续撤销到�
 esc退出编辑状态
 :x保存并退出，在光标状态使用，若未修改不更新修改时间
 wq保存并退出若未修改同样更新修改时间
+:wq!强制保存并退出（若有权限）
 </code></pre>
       
     </div>
@@ -247,7 +253,7 @@ wq保存并退出若未修改同样更新修改时间
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Ubuntu" data-title="备忘：ubuntu安装JAVA、tomcat、hadoop、vi常用命令" data-url="http://yoursite.com/2015/12/17/Ubuntu/"></div>
+	<div class="ds-thread" data-thread-key="20151217-Ubuntu" data-title="备忘：ubuntu安装JAVA、tomcat、hadoop、vi常用命令" data-url="http://yoursite.com/2015/12/17/20151217-Ubuntu/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
