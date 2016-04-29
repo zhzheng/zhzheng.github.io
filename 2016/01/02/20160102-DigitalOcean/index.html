@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/01/02/20160102-DigitalOcean/index.html">
 <meta property="og:site_name" content="zehuazheng's blog">
 <meta property="og:description" content="此文非教程仅为个人备忘，请遵守法律文明上网！">
-<meta property="og:updated_time" content="2016-04-18T11:05:15.000Z">
+<meta property="og:updated_time" content="2016-04-29T08:56:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DigitalOcean安装ss+锐速">
 <meta name="twitter:description" content="此文非教程仅为个人备忘，请遵守法律文明上网！">
@@ -192,7 +192,7 @@
 <p>重启服务<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks-libev <span class="operator"><span class="keyword">stop</span></span><br><span class="line">/etc/init.<span class="keyword">d</span>/shadowsocks-libev <span class="keyword">start</span></span></span><br></pre></td></tr></table></figure></p>
 <p>OK,此时可以使用ss连接，上传下载大概2Mbps左右，YouTube勉强480p</p>
 <hr>
-<p>注册<a href="http://my.serverspeeder.com" target="_blank" rel="external">锐速</a><br>安装<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//my.serverspeeder.com/d/ls/serverSpeederInstaller.tar.gz</span></span><br><span class="line">tar xzvf serverSpeederInstaller<span class="class">.tar</span><span class="class">.gz</span></span><br><span class="line">bash serverSpeederInstaller.sh</span><br></pre></td></tr></table></figure></p>
+<p><strong>注册<a href="http://my.serverspeeder.com" target="_blank" rel="external">锐速</a></strong><br><strong>OpenVZ类型不适用</strong><br>安装<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//my.serverspeeder.com/d/ls/serverSpeederInstaller.tar.gz</span></span><br><span class="line">tar xzvf serverSpeederInstaller<span class="class">.tar</span><span class="class">.gz</span></span><br><span class="line">bash serverSpeederInstaller.sh</span><br></pre></td></tr></table></figure></p>
 <p>输入刚刚注册的账号、密码完成安装，最后两步开机自启和现在开始运行建议选y。<br>优化配置<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi <span class="regexp">/serverspeeder/</span>etc/config</span><br><span class="line">advinacc=<span class="string">"1"</span>  流量方向加速</span><br><span class="line">maxmode=<span class="string">"1"</span>  最大传输模式</span><br></pre></td></tr></table></figure></p>
 <p>重启锐速<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/serverspeeder/bin/serverSpeeder<span class="class">.sh</span> stop     停止</span><br><span class="line">/serverspeeder/bin/serverSpeeder<span class="class">.sh</span> start    启动</span><br></pre></td></tr></table></figure></p>
 <p>2016.1.2 22：00 测试速度4Mbps左右，传DO对电信线路支持不好，实际使用720p ok，1080p勉强。<br>Enjoy！</p>
